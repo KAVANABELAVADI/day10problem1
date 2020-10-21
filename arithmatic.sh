@@ -1,9 +1,9 @@
 #!/bin/bash -x
-
+declare -A airth
 read -p "Enter three numbers - " a b c
-ans1=$(echo $a $b $c | awk '{print (($1+$2*$3))}')
-ans2=$(echo $a $b $c | awk '{print (($1*$2+$3))}')
-ans3=$(echo $a $b $c | awk '{print (($3+$1/$2))}')
-ans4=$(echo $a $b $c | awk '{print ((($1%$2)+$3))}')
+airth[ans1]=$(echo $a $b $c | awk '{print (($1+$2*$3))}')
+airth[ans2]=$(echo $a $b $c | awk '{print (($1*$2+$3))}')
+airth[ans3]=$(echo $a $b $c | awk '{print (($3+$1/$2))}')
+airth[ans4]=$(echo $a $b $c | awk '{print ((($1%$2)+$3))}')
 
-echo $ans1 $ans2 $ans3 $ans4
+echo ${airth[ans1]} ${airth[ans2]} ${airth[ans3]} ${airth[ans4]}
